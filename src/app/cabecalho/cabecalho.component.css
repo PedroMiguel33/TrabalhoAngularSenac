@@ -1,0 +1,172 @@
+/* ===== CABEÇALHO ===== */
+header {
+  width: 100%;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #007bff, #00b4d8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 15px 15px;
+  color: white;
+}
+
+/* allow absolute centering of the center-controls */
+header { position: relative; }
+
+/* ===== LOGO ===== */
+.logo h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.nav-left { margin-left: 12px; }
+
+.catalog-btn {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  text-decoration: none;
+}
+.cart-badge {
+  display:inline-block; min-width:20px; padding:2px 6px; margin-left:6px; background: #ff4757; color:white; border-radius:12px; font-size:12px; text-align:center;
+}
+
+.logo span {
+  color: #ffdd00;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* auth controls (login/logout) */
+.auth-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* container that keeps auth + nav centered in the header */
+/* Use flex layout to avoid overflow: center-controls grows and centers nav, right-controls stays to the right */
+.center-controls {
+  position: static;
+  transform: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto; /* take remaining space between logo and possible edges */
+  justify-content: center; /* center nav + auth inside the available space */
+  min-width: 0; /* allow children to shrink to avoid overflow */
+}
+
+/* small helper when auth is placed next to nav */
+.center-controls .center-auth { margin-left: 8px; }
+
+.login-btn {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.555);
+  color: rgba(255,255,255,0.9);
+  padding: 6px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0.85;
+  transition: opacity 0.15s ease, transform 0.12s ease;
+  margin-left: 1250px;  /* Move 50px para a direita */
+  cursor: pointer;
+  /* keep login button in normal flow; removed absolute positioning to avoid overflow */
+}
+
+
+.login-cadastrar {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.555);
+  color: rgba(255,255,255,0.9);
+  padding: 6px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0.85;
+  transition: opacity 0.15s ease, transform 0.12s ease;
+  margin-left: 10px; /* Espaçamento entre os botões */
+  cursor: pointer;
+  /* keep login button in normal flow; removed absolute positioning to avoid overflow */
+}
+  
+
+/*login-cadastrar*/
+
+.login-btn:hover { opacity: 1; transform: translateY(-5px); } /*Animaçaozinha*/
+.login-cadastrar:hover { opacity: 1; transform: translateY(-5px); } /*Animaçaozinha*/
+
+.user-info { display:flex; gap:8px; align-items:center; }
+.username { font-weight:600; color: rgba(255,255,255,0.95); }
+.logout-btn {
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+nav a.ativo {
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  /* on small screens, restore normal flow so center-controls stack correctly */
+  .center-controls {
+    position: static;
+    transform: none;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .right-controls {
+    position: static;
+    transform: none;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+  }
+}

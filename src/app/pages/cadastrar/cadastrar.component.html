@@ -1,0 +1,49 @@
+<div class="cadastro-container">
+  <h2>{{ titulo }}</h2>
+
+  <form (ngSubmit)="submeter()" #formProduto="ngForm">
+    <label for="input-nome">Nome do Produto</label>
+    <input
+      class="input-simples"
+      id="input-nome"
+      name="nome"
+      placeholder="Digite o nome do produto"
+      type="text"
+      [(ngModel)]="produto.nome"
+      required
+    />
+
+    <label for="input-preco">Preço (R$)</label>
+    <input
+      class="input-simples"
+      id="input-preco"
+      name="preco"
+      placeholder="Ex: 99.90"
+      type="number"
+      step="0.01"
+      [(ngModel)]="produto.preco"
+      required
+    />
+
+    <label for="input-estoque">Estoque</label>
+    <input
+      class="input-simples"
+      id="input-estoque"
+      name="estoque"
+      placeholder="Quantidade disponível"
+      type="number"
+      [(ngModel)]="produto.estoque"
+      required
+    />
+
+    <label for="input-categoria">Categoria</label>
+    <select id="input-categoria" name="categoria" class="input-simples" [(ngModel)]="produto.categoria" required>
+      <option value="" disabled selected>Selecione uma categoria</option>
+      <option *ngFor="let c of categorias" [value]="c">{{ c }}</option>
+    </select>
+
+    <button class="input-submeter" type="submit" [disabled]="formProduto.invalid">
+      Salvar Produto
+    </button>
+  </form>
+</div>

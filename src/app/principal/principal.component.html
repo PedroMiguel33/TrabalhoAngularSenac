@@ -1,0 +1,99 @@
+<main class="catalog">
+  <!-- Botão 'Cadastrar Cliente' removido -->
+
+  <!-- carrossel de propagandas (auto-rotaciona a cada 2s) -->
+  <div class="promo-carousel" (mouseenter)="pauseCarousel()" (mouseleave)="resumeCarousel()">
+    <div
+      class="promo-slide"
+      *ngFor="let img of promoImages; let idx = index"
+      [class.active]="idx === currentPromoIndex"
+    >
+      <img [src]="img" [alt]="'Promoção ' + (idx + 1)" />
+    </div>
+
+    <!-- indicadores simples -->
+    <div class="promo-dots">
+      <button
+        *ngFor="let _ of promoImages; let i = index"
+        class="dot"
+        [class.active]="i === currentPromoIndex"
+        (click)="currentPromoIndex = i"
+      ></button>
+    </div>
+  </div>
+
+  <!-- categorias (aba de imagens) -->
+  <div class="categories-bar" *ngIf="categorias.length">
+    <div class="categories-wrapper">
+      <button class="cat-nav carousel-btn left" (click)="scrollCategories(-1)" aria-label="Previous categories">
+        ‹
+      </button>
+
+      <div class="categories-scroll" role="list">
+        <button
+          *ngFor="let c of categorias"
+          class="cat-item"
+          [class.active]="c === activeCategory"
+          (click)="onCategoryClick(c)"
+        >
+          <img [src]="getCategoryImage(c)" [alt]="c" />
+          <div class="cat-label">{{ c }}</div>
+        </button>
+      </div>
+
+      <button class="cat-nav carousel-btn right" (click)="scrollCategories(1)" aria-label="Next categories">
+        ›
+      </button>
+    </div>
+  </div>
+
+  <!-- PROPAGANDAS 5 E 6 LOGO ABAIXO DAS CATEGORIAS -->
+<div class="propagandas-row">
+  <img src="propaganda5.png" alt="Propaganda 5" />
+  <img src="propaganda6.png" alt="Propaganda 6" alt="Propaganda 6"/>
+</div>
+
+
+  <h2  class="misera">Produtos</h2>
+
+  <ng-container *ngFor="let g of grouped; let i = index">
+    <!-- Antes da seção de doces, insere as propagandas -->
+    <ng-container *ngIf="g.categoria === 'Doces'">
+    <!-- PROPAGANDAS FIXAS ABAIXO DAS CATEGORIAS -->
+<!-- PROPAGANDAS 5 E 6 (logo abaixo das categorias) -->
+
+
+
+    </ng-container>
+
+    <div class="category-section">
+      <h3 class="category-title">{{ g.categoria }}</h3>
+
+      <!-- carousel wrapper -->
+      <div class="carousel-wrapper">
+        <button class="carousel-btn left" (click)="scrollCategory(i, -1)" aria-label="Scroll left">‹</button>
+
+        <div id="grid-{{ i }}" class="grid-horizontal">
+          <article class="card" *ngFor="let p of g.produtos">
+            <div class="img">📦</div>
+
+            <div class="body">
+              <h3>{{ p.nome }}</h3>
+              <p class="preco">R$ {{ p.preco | number:'1.2-2' }}</p>
+            </div>
+
+            <div class="actions">
+              <button class="comprar" (click)="addToCart(p)">Comprar</button>
+            </div>
+          </article>
+        </div>
+
+        <button class="carousel-btn right" (click)="scrollCategory(i, 1)" aria-label="Scroll right">›</button>
+      </div>
+    </div>
+  </ng-container>
+  <!-- TOAST DE NOTIFICAÇÃO -->
+<div class="toast" *ngIf="showToast">
+  {{ toastMessage }}
+</div>
+</main>

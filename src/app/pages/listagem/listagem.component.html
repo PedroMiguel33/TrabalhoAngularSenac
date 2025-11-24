@@ -1,0 +1,32 @@
+<div class="content-container">
+  <h2>📦 Lista de Produtos</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Preço (R$)</th>
+        <th>Estoque</th>
+        <th>Categoria</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (produto of listaProduto; track produto) {
+      <tr>
+        <td>{{ produto.id }}</td>
+        <td>{{ produto.nome }}</td>
+        <td>{{ produto.preco | currency:'BRL' }}</td>
+        <td>{{ produto.estoque }}</td>
+        <td>{{ produto.categoria }}</td>
+        <td class="acoes">
+          <button class="btn-editar" [disabled]="!produto.id" (click)="produto.id && editar(produto.id)">✏️ Editar</button>
+          <button class="btn-excluir" (click)="excluir(produto.id!)">🗑️ Excluir</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

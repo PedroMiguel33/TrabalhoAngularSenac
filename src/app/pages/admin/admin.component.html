@@ -1,0 +1,28 @@
+<section class="admin">
+  <h2>Administração de usuários</h2>
+
+  <form (ngSubmit)="create()" class="form-create">
+    <input placeholder="Usuário" [(ngModel)]="username" name="username" />
+    <input placeholder="Senha" [(ngModel)]="password" name="password" type="password" />
+    <select [(ngModel)]="role" name="role">
+      <option value="user">Usuário</option>
+      <option value="admin">Admin</option>
+    </select>
+    <button type="button" (click)="create()">Criar</button>
+  </form>
+
+  <table class="users-table">
+    <thead>
+      <tr><th>Usuário</th><th>Função</th><th>Ações</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{ u.username }}</td>
+        <td>{{ u.role }}</td>
+        <td>
+          <button [disabled]="!u.id" (click)="u.id !== undefined && remove(u.id)">Remover</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

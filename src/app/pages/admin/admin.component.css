@@ -1,0 +1,6 @@
+.admin { padding: 20px; }
+.form-create { display:flex; gap:8px; align-items:center; margin-bottom:12px; }
+.form-create input, .form-create select { padding:6px 8px; border-radius:6px; border:1px solid #ccc; }
+.users-table { width:100%; border-collapse:collapse; }
+.users-table th, .users-table td { text-align:left; padding:8px; border-bottom:1px solid #eee; }
+.users-table button { background:#e53e3e; color:white; border:none; padding:6px 8px; border-radius:6px; }

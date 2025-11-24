@@ -1,0 +1,25 @@
+<section class="cart">
+  <h2>Carrinho</h2>
+  <div *ngIf="items.length === 0">Carrinho vazio.</div>
+  <table *ngIf="items.length > 0" class="cart-table">
+    <thead><tr><th>Produto</th><th>Qtd</th><th>Preço</th><th>Ações</th></tr></thead>
+    <tbody>
+      <tr *ngFor="let it of items">
+        <td>{{ it.produto.nome }}</td>
+        <td>
+          <div class="qty-controls">
+            <button (click)="change(it.produto.id, -1)">-</button>
+            <span class="qty">{{ it.quantidade }}</span>
+            <button (click)="change(it.produto.id, 1)">+</button>
+          </div>
+        </td>
+        <td>R$ {{ (it.produto.preco * it.quantidade) | number:'1.2-2' }}</td>
+        <td><button (click)="remove(it.produto.id)">Remover</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <button (click)="finalizar()" class="finalizar">Finalizar Pedido</button>
+  </div>
+</section>

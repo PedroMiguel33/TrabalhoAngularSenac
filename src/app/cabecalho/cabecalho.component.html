@@ -1,0 +1,34 @@
+<header>
+  <div class="logo">
+    <h1>Mercadinho <span>P & E</span></h1>
+  </div>
+  <div class="nav-left">
+    <a routerLink="/catalogo" class="catalog-btn">Catálogo</a>
+    <a routerLink="/carrinho" class="catalog-btn">Carrinho <span class="cart-badge">{{ cartCount }}</span></a>
+  </div>
+
+  <!-- central container for login + nav (keeps them visually centered) -->
+  <div class="center-controls">
+    <!-- mostra apenas para admin -->
+    <nav *ngIf="isAdmin">
+      <a routerLink="/cadastrar" routerLinkActive="ativo">Cadastrar</a>
+      <a routerLink="/cadastro-cliente" routerLinkActive="ativo">Cadastrar Cliente</a>
+      <a routerLink="/alterar" routerLinkActive="ativo">Alterar</a>
+      <a routerLink="/excluir" routerLinkActive="ativo">Excluir</a>
+      <a routerLink="/consultar" routerLinkActive="ativo">Consultar</a>
+      <a routerLink="/listagem" routerLinkActive="ativo">Listagem</a>
+      <a routerLink="/admin" routerLinkActive="ativo">Admin</a>
+    </nav>
+
+    <!-- subtle login control placed next to nav for true center alignment -->
+    <div class="auth-controls center-auth">
+      <button class="login-btn" (click)="promptLogin()" *ngIf="!isLogged" title="Fazer login">Entrar</button> 
+       <button class="login-cadastrar" (click)="promptCadastrar()" *ngIf="!isLogged" title="Cadastrar cliente">Cadastrar-se</button> 
+      <div class="user-info" *ngIf="isLogged">
+        <span class="username">{{ user?.username }}</span>
+        <button class="logout-btn" (click)="logout()">Sair</button>
+      </div>
+    </div>
+  </div>
+
+</header>

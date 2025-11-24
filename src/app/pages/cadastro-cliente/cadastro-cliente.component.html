@@ -1,0 +1,29 @@
+<div class="cadastro-cliente-container">
+	<h2>Cadastro de Cliente</h2>
+	<form [formGroup]="clienteForm" (ngSubmit)="cadastrarCliente()">
+		<div>
+			<label for="nome">Nome:</label>
+			<input id="nome" formControlName="nome" type="text" />
+		</div>
+		<div>
+			<label for="email">Email:</label>
+			<input id="email" formControlName="email" type="email" />
+		</div>
+		<div>
+			<label for="cpf">CPF:</label>
+			<input id="cpf" formControlName="cpf" type="text" />
+		</div>
+		<div>
+			<label for="password">Senha:</label>
+			<input id="password" formControlName="password" type="password" />
+		</div>
+		<div>
+			<label for="telefone">Telefone:</label>
+			<input id="telefone" formControlName="telefone" type="text" />
+		</div>
+		<button type="submit" [disabled]="!clienteForm.valid">Cadastrar</button>
+	</form>
+	<div *ngIf="sucesso" class="sucesso">
+		Cliente cadastrado com sucesso!
+	</div>
+</div>

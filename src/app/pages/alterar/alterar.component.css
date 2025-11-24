@@ -1,0 +1,85 @@
+.alterar-produto-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    font-family: "Inter", sans-serif;
+}
+
+.alterar-produto-container h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #1a2b49;
+    text-align: center;
+}
+
+.busca-form,
+.edicao-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #223354;
+}
+
+input,
+select {
+    padding: 10px 12px;
+    border: 1.5px solid #d2d7e0;
+    border-radius: 8px;
+    background: #f9fafc;
+    transition: 0.2s ease;
+    font-size: 15px;
+}
+
+input:focus,
+select:focus {
+    border-color: #4169e1;
+    box-shadow:0 0 0 3px rgba(65,105,225,0.2);
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    background: #4169e1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #3559c9;
+}
+
+/* SUCESSO (VERDE) */
+.sucesso {
+    background: #e6f4ea;
+    padding: 10px 14px;
+    border-left: 4px solid #4caf50;
+    color: #2e7d32;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* ERRO (VERMELHO) */
+.erro {
+    background: #ffebee;
+    padding: 10px 14px;
+    border-left: 4px solid #e53935;
+    color: #b71c1c;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}

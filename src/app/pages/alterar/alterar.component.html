@@ -1,0 +1,32 @@
+<section class="alterar-produto-container">
+  <h2>Alterar Produto</h2>
+
+  <!-- FORM BUSCAR -->
+  <form (submit)="$event.preventDefault(); buscarProduto();" class="busca-form">
+    <label for="idBusca">ID do Produto:</label>
+    <input id="idBusca" type="number" [(ngModel)]="idBusca" name="idBusca" required />
+    <button type="submit">Procurar</button>
+  </form>
+
+  <!-- MENSAGEM (erro ou sucesso) -->
+  <div *ngIf="mensagem" [ngClass]="tipoMensagem">{{ mensagem }}</div>
+
+  <!-- FORM EDITAR -->
+  <form *ngIf="produto" (submit)="$event.preventDefault(); atualizarProduto();" class="edicao-form">
+    <label for="nome">Nome:</label>
+    <input id="nome" type="text" [(ngModel)]="produto.nome" name="nome" required />
+
+    <label for="preco">Preço:</label>
+    <input id="preco" type="number" [(ngModel)]="produto.preco" name="preco" required />
+
+    <label for="estoque">Estoque:</label>
+    <input id="estoque" type="number" [(ngModel)]="produto.estoque" name="estoque" required />
+
+    <label for="categoria">Categoria:</label>
+    <select id="categoria" [(ngModel)]="produto.categoria" name="categoria" required>
+      <option *ngFor="let cat of categorias" [value]="cat">{{ cat }}</option>
+    </select>
+
+    <button type="submit">Atualizar</button>
+  </form>
+</section>

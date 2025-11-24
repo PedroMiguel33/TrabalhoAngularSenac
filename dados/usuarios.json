@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "d6ff",
+      "username": "Pedro Miguel",
+      "password": "123",
+      "role": "user",
+      "email": "pedromigueldeoliveiras@gmail.com",
+      "cpf": "9999999999",
+      "telefone": "11949251289"
+    },
+    {
+      "id": "2",
+      "username": "Enzo Lindinho",
+      "email": "enzolindo@gmail.com",
+      "cpf": "111111111111",
+      "password": "enzo123",
+      "telefone": "9303363861",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "username": "cabelo",
+      "password": "123",
+      "role": "user"
+    },
+    {
+      "id": "4",
+      "username": "adminenzo",
+      "password": "123",
+      "role": "admin"
+    },
+    {
+      "id": "5",
+      "username": "Romulo",
+      "email": "romulo@gmail.com",
+      "cpf": "111111111111",
+      "password": "123",
+      "telefone": "11 40028922",
+      "role": "user"
+    }
+  ]
+}

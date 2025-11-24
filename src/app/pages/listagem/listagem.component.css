@@ -1,0 +1,95 @@
+/* ===== CONTAINER ===== */
+.content-container {
+  width: 90%;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* ===== TABELA ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+thead {
+  background: #007bff;
+  color: white;
+  text-transform: uppercase;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s ease;
+}
+
+tbody tr:hover {
+  background-color: #f2f8ff;
+}
+
+/* ===== BOTÕES ===== */
+.acoes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-editar,
+.btn-excluir {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-editar {
+  background-color: #00b4d8;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #0096c7;
+}
+
+.btn-excluir {
+  background-color: #ef233c;
+  color: white;
+}
+
+.btn-excluir:hover {
+  background-color: #d90429;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  table {
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .acoes {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

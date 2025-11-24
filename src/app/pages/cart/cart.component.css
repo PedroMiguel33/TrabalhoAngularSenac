@@ -1,0 +1,10 @@
+.cart { padding:20px; max-width:900px; margin:20px auto; }
+.cart-table { width:100%; border-collapse:collapse; margin-bottom:12px; }
+.cart-table th, .cart-table td { padding:8px 10px; border-bottom:1px solid #eee; text-align:left; }
+.cart-table button { background:#e53e3e; color:#fff; border:none; padding:6px 8px; border-radius:6px; }
+.footer { display:flex; justify-content:flex-end; }
+.finalizar { background:#0b5ed7; color:white; border:none; padding:8px 12px; border-radius:6px; }
+
+.qty-controls { display:flex; align-items:center; gap:8px; }
+.qty-controls button { width:28px; height:28px; border-radius:6px; border:none; background:#ddd; }
+.qty { min-width:22px; text-align:center; display:inline-block; }
